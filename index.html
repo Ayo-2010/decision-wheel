@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Decision Wheel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page">
+    <header class="masthead">
+      <p class="kicker">🎡 Spin it, settle it</p>
+      <h1>Decision Wheel</h1>
+      <p class="sub">Type your options, hit spin, and let the wheel call it.</p>
+    </header>
+
+    <div class="stage">
+      <div class="wheel-wrap">
+        <canvas id="canvas" width="620" height="620" aria-label="Decision wheel"></canvas>
+        <div class="pointer" aria-hidden="true"></div>
+      </div>
+
+      <div class="controls">
+        <div class="controls-head">
+          <label for="options">Options</label>
+          <span id="count" class="count">0 / 12</span>
+        </div>
+        <textarea id="options" spellcheck="false" rows="9" placeholder="One option per line"></textarea>
+        <p id="error" class="error" hidden></p>
+        <div class="row">
+          <button id="spinBtn" class="btn spin">Spin</button>
+          <button id="shuffleBtn" class="btn ghost">Shuffle</button>
+        </div>
+        <p class="hint">Press <kbd>Space</kbd> to spin. Max 12 options.</p>
+      </div>
+    </div>
+
+    <section class="result-card">
+      <p class="result-label">The wheel says</p>
+      <p id="result" class="result">Ready when you are</p>
+    </section>
+
+    <section class="history-panel">
+      <div class="history-head">
+        <h2>Recent results</h2>
+        <button id="clearHistory" class="btn tiny">Clear history</button>
+      </div>
+      <ul id="history" class="history"></ul>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
